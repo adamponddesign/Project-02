@@ -1,62 +1,44 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+
+
 import 'bulma'
+
+
+import Station from './components/Station'
+import Home from './components/Home'
+
+
+
 class App extends React.Component {
-
-  constructor() {
-    super()
-
-    this.state = {
-      trains: []
-    }
-
-  }
-
-  getDepartures() {
-    return this.state.trains.departures.all.map(data => data.origin_name).join(', ')
-  }
-
-
-
-
-  componentDidMount() {
-    axios.get('https://transportapi.com/v3/uk/train/station/kgx/live.json?app_id=0321c2ca&app_key=e105b0121aa3d9c0eb247a0d5aa99ae9&darwin=false&train_status=passenger')
-
-
-      .then(res => this.setState({ trains: res.data.departures.all }))
-
-  }
 
 
 
   render() {
-    console.log(this.state.trains)
-
-    if (!this.state) return null
-
     return (
-      <section className="section">
-        <div className="container">
-          <h1 className="title is-1">Kings Cross Departure Trains</h1>
-          <div className="columns is-multiline">
-            {this.state.trains.map((train, index) =>
-              <div className="column is-full-desktop" key={index}>
+      <Router>
+        <main>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/station/kgx">Kings Cross</Link>
+            <Link to="/station/vic">Victoria</Link>
+            <Link to="/station/chx">Charing Cross</Link>
+          </nav>
 
-                <div>{train.destination_name}</div>
-                <div>{train.expected_departure_time}</div>
-                <div>{train.aimed_departure_time}</div>
+          <Switch>
+            <Route path="/station/:code" component={Station} />
+            <Route path="/" component={Home} />
 
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+
+          </Switch>
+        </main>
+      </Router>
     )
   }
+
 }
-
-
 
 ReactDOM.render(
   <App />,
