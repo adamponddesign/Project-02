@@ -6,7 +6,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import 'bulma'
 
-
+import './style.scss'
 import Station from './components/Station'
 import Home from './components/Home'
 
@@ -20,19 +20,24 @@ class App extends React.Component {
     return (
       <Router>
         <main>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/station/kgx">Kings Cross</Link>
-            <Link to="/station/vic">Victoria</Link>
-            <Link to="/station/chx">Charing Cross</Link>
-          </nav>
+          <section>
+            <div className="container">
+              <nav>
+                <Link to="/">Home</Link>
+                <Link to="/station/kgx">Kings Cross</Link>
+                <Link to="/station/vic">Victoria</Link>
+                <Link to="/station/chx">Charing Cross</Link>
+              </nav>
 
-          <Switch>
-            <Route path="/station/:code" component={Station} />
-            <Route path="/" component={Home} />
+              <Switch>
+                <Route path="/station/:code" component={Station} />
+                <Route path="/" component={Home} />
 
 
-          </Switch>
+              </Switch>
+
+            </div>
+          </section>
         </main>
       </Router>
     )

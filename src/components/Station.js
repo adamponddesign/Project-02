@@ -52,22 +52,22 @@ class Station extends React.Component {
 
 
 
-          <h1 className="title is-1">{this.state.station} Departures</h1>
+          <h1 className="headings title is-1 has-text-centered">{this.state.station} Departures</h1>
 
           <div className="columns">
-            <p className="column is-two-thirds">Destination</p>
-            <p className="column">Expected Departure</p>
-            <p className="column">Platform</p>
+            <p className="headings column is-two-thirds">Destination</p>
+            <p className="headings column has-text-centered">Platform</p>
+            <p className="headings column has-text-centered">Expected Departure</p>
           </div>
 
           <div>
             {this.state.trains.map((train, index) =>
               <div className="columns" key={index}>
-                <div className="column is-two-thirds">{train.destination_name}
+                <div className="boardtext column is-two-thirds">{train.destination_name}
 
                 </div>
-                <div className="column">{train.expected_departure_time}</div>
-                <div className="column">{train.platform}</div>
+                <div className="boardtext column has-text-centered">{train.platform}</div>
+                <div className="boardtext column has-text-centered">{train.expected_departure_time}</div>
               </div>
             )}
           </div>
