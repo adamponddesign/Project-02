@@ -24,11 +24,14 @@ class App extends React.Component {
             <div className="container">
               <nav>
                 <Link to="/">Home</Link>
-                <Link to="/station/kgx">London Kings Cross</Link>
-                <Link to="/station/vic">London Victoria</Link>
-                <Link to="/station/chx">London Charing Cross</Link>
-                <Link to="/station/pad">London Paddington</Link>
-                <Link to="/station/spx">London St Pancras</Link>
+                <Link to="/station/kgx">Kings Cross</Link>
+                <Link to="/station/vic">Victoria</Link>
+                <Link to="/station/chx">Charing Cross</Link>
+                <Link to="/station/pad">Paddington</Link>
+                <Link to="/station/spx">St Pancras</Link>
+                <Link to="/station/eus">Euston</Link>
+                <Link to="/station/myb">Marylebone</Link>
+                <Link to="/station/wat">Waterloo</Link>
               </nav>
 
               <Switch>

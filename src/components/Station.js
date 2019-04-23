@@ -9,13 +9,14 @@ class Station extends React.Component {
 
     console.log(this.props)
     this.state = {
-      trains: [],
+      departures: [],
+      arrivals: [],
       station: ''
     }
 
   }
 
-  getData() {
+  getDeparturesData() {
     axios.get(`https://transportapi.com/v3/uk/train/station/${this.props.match.params.code}/live.json`, {
       params: {
         app_id: '0321c2ca',
@@ -25,18 +26,39 @@ class Station extends React.Component {
       }
     })
       .then(res => {
-        this.setState({ trains: res.data.departures.all, station: res.data.station_name })
+        this.setState({ departures: res.data.departures.all, station: res.data.station_name })
+      })
+  }
+
+  getArrivalsData() {
+    axios.get(`https://transportapi.com/v3/uk/train/station/${this.props.match.params.code}/live.json`, {
+      params: {
+        app_id: '0321c2ca',
+        app_key: 'e105b0121aa3d9c0eb247a0d5aa99ae9',
+        darwin: false,
+        train_status: 'passenger',
+        type: 'arrival'
+      }
+    })
+      .then(res => {
+        this.setState({ arrivals: res.data.arrivals.all, station: res.data.station_name })
       })
   }
 
 
+
+
+
+
   componentDidMount() {
-    this.getData()
+    this.getDeparturesData()
+    this.getArrivalsData()
   }
 
   componentDidUpdate(prevProps) {
     if(prevProps.match.params.code !== this.props.match.params.code) {
-      this.getData()
+      this.getDeparturesData()
+      this.getArrivalsData()
     }
   }
 
@@ -61,13 +83,38 @@ class Station extends React.Component {
           </div>
 
           <div>
-            {this.state.trains.map((train, index) =>
+            {this.state.departures.map((train, index) =>
               <div className="columns" key={index}>
                 <div className="boardtext column is-two-thirds">{train.destination_name}
 
                 </div>
                 <div className="boardtext column has-text-centered">{train.platform}</div>
                 <div className="boardtext column has-text-centered">{train.expected_departure_time}</div>
+              </div>
+            )}
+          </div>
+
+
+
+
+
+
+          <h1 className="headings title is-1 has-text-centered">{this.state.station} Arrivals</h1>
+
+          <div className="columns">
+            <p className="headings column is-two-thirds">Arriving From</p>
+            <p className="headings column has-text-centered">Platform</p>
+            <p className="headings column has-text-centered">Expected Arrival</p>
+          </div>
+
+          <div>
+            {this.state.arrivals.map((train, index) =>
+              <div className="columns" key={index}>
+                <div className="boardtext column is-two-thirds">{train.origin_name}
+
+                </div>
+                <div className="boardtext column has-text-centered">{train.platform}</div>
+                <div className="boardtext column has-text-centered">{train.expected_arrival_time}</div>
               </div>
             )}
           </div>
