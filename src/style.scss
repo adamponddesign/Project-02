@@ -4,13 +4,21 @@ $color2: white;
 
 body {
   background-color: $background-color;
-  height: 100vh;
+  height: 100%;
+}
+
+.homepic {
+  opacity: 0.50;
 }
 
 nav a{
   text-decoration: none;
   color: $color2;
   margin: 20px;
+}
+
+nav a:hover {
+  color: $color1
 }
 
 nav {
