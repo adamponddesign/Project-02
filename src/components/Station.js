@@ -48,17 +48,36 @@ class Station extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <h1 className="title is-1">{this.state.station} Depatures</h1>
-          <div className="columns is-multiline subtitle is-6">
-            {this.state.trains.map((train, index) =>
-              <div className="column is-full-desktop" key={index}>
-                <div>{train.destination_name}</div>
-                <div>{train.expected_departure_time}</div>
-                <div>{train.aimed_departure_time}</div>
 
+
+
+
+          <h1 className="title is-1">{this.state.station} Departures</h1>
+
+          <div className="columns">
+            <p className="column is-two-thirds">Destination</p>
+            <p className="column">Expected Departure</p>
+            <p className="column">Platform</p>
+          </div>
+
+          <div>
+            {this.state.trains.map((train, index) =>
+              <div className="columns" key={index}>
+                <div className="column is-two-thirds">{train.destination_name}
+
+                </div>
+                <div className="column">{train.expected_departure_time}</div>
+                <div className="column">{train.platform}</div>
               </div>
             )}
           </div>
+
+
+
+
+
+
+
         </div>
       </section>
     )
