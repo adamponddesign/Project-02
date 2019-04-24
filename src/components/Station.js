@@ -70,61 +70,45 @@ class Station extends React.Component {
     return (
       <section className="section">
         <div className="container">
-
-
-
-
-          <h1 className="headings title is-1 has-text-centered">{this.state.station} Departures</h1>
-
-          <div className="columns">
-            <p className="headings column is-two-thirds">Destination</p>
-            <p className="headings column has-text-centered">Platform</p>
-            <p className="headings column has-text-centered">Expected Departure</p>
-          </div>
-
-          <div>
-            {this.state.departures.map((train, index) =>
-              <div className="columns" key={index}>
-                <div className="boardtext column is-two-thirds">{train.destination_name}
-
-                </div>
-                <div className="boardtext column has-text-centered">{train.platform}</div>
-                <div className="boardtext column has-text-centered">{train.expected_departure_time}</div>
+          <h1 className="headings title is-1 has-text-centered">{this.state.station}</h1>
+          <div className="columns">   {/* overall columns tag*/ }
+            <div className="column">  {/* opening column 1 tag*/ }
+              <h1 className="headings title is-1 has-text-centered">Departures</h1>
+              <div className="columns is-half">
+                <p className="headings column">Destination</p>
+                <p className="headings column has-text-centered">Platform</p>
+                <p className="headings column has-text-centered">Expected Departure</p>
               </div>
-            )}
-          </div>
-
-
-
-
-
-
-          <h1 className="headings title is-1 has-text-centered">{this.state.station} Arrivals</h1>
-
-          <div className="columns">
-            <p className="headings column is-two-thirds">Arriving From</p>
-            <p className="headings column has-text-centered">Platform</p>
-            <p className="headings column has-text-centered">Expected Arrival</p>
-          </div>
-
-          <div>
-            {this.state.arrivals.map((train, index) =>
-              <div className="columns" key={index}>
-                <div className="boardtext column is-two-thirds">{train.origin_name}
-
-                </div>
-                <div className="boardtext column has-text-centered">{train.platform}</div>
-                <div className="boardtext column has-text-centered">{train.expected_arrival_time}</div>
+              <div>
+                {this.state.departures.map((train, index) =>
+                  <div className="columns is-half" key={index}>
+                    <div className="boardtext column">{train.destination_name}
+                    </div>
+                    <div className="boardtext column has-text-centered">{train.platform}</div>
+                    <div className="boardtext column has-text-centered">{train.expected_departure_time}</div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-
-
-
-
-
-
-
+            </div>    {/* closing column 1 tag*/ }
+            <div className="column">  {/* opening column 2 tag*/ }
+              <h1 className="headings title is-1 has-text-centered">Arrivals</h1>
+              <div className="columns is-half">
+                <p className="headings column">Arriving From</p>
+                <p className="headings column has-text-centered">Platform</p>
+                <p className="headings column has-text-centered">Expected Arrival</p>
+              </div>
+              <div>
+                {this.state.arrivals.map((train, index) =>
+                  <div className="columns is-half" key={index}>
+                    <div className="boardtext column">{train.origin_name}
+                    </div>
+                    <div className="boardtext column has-text-centered">{train.platform}</div>
+                    <div className="boardtext column has-text-centered">{train.expected_arrival_time}</div>
+                  </div>
+                )}
+              </div>
+            </div>    {/* closing column 2 tag*/ }
+          </div>    {/* overall close columns tag*/ }
         </div>
       </section>
     )
