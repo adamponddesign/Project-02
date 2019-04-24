@@ -8,28 +8,19 @@ import Station from './components/Station'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 
-
-
-
-
-
 class App extends React.Component {
-
-
-
 
   render() {
     return (
       <Router>
         <main>
-          <section>
+          <section className="section">
             <div className="container">
               <Navbar />
 
               <Switch>
                 <Route path="/station/:code" component={Station} />
                 <Route path="/" component={Home} />
-
 
               </Switch>
 

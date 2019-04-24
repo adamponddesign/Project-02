@@ -9,8 +9,11 @@ $color2: white;
   font-style: normal;
 }
 
-#station-section {
-  padding-top: 10px;
+@keyframes swing {
+  0%, 100% { transform: rotate(-10deg); }
+  20% { transform:scale(.95); }
+  50% { transform:rotate(10deg); }
+  80% { transform:scale(.95); }
 }
 
 body {
@@ -24,10 +27,10 @@ body {
 
 .homepageimage {
   width: 400px;
-}
-
-.homepic {
-  opacity: 0.50;
+  margin-top: 30px;
+  border: 20px solid $color2;
+  border-radius: 50%;
+  animation: swing 4s infinite ease-in-out;
 }
 
 nav a{
@@ -43,7 +46,6 @@ nav a:hover {
 nav {
   padding-top: 20px;
 }
-
 
 
 .headings {
@@ -69,18 +71,31 @@ nav {
   display: inline-block;
 }
 
-#home-section {
-  height: 100vh;
+main {
+  min-height: 100vh;
 }
 
-#headerCont {
-}
-
-#station-column-1, #station-column-2 {
+.station-column {
   border: 1px solid white;
   margin: 2px;
+  padding-top: 30px!important;
+  padding-bottom: 30px!important;
 }
 
 .column {
   padding: 0px 20px 0 20px;
+}
+
+select {
+  height: 30px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.section {
+  padding-top: 10px;
+}
+
+.lines {
+  border-bottom: 1px solid white;
 }

@@ -21,21 +21,30 @@ class Navbar extends React.Component {
   render() {
     return (
 
+
       <nav>
 
         <select onChange={this.handleChange}>
-          <option value="/">Home</option>
-          <option value="/station/kgx">Kings Cross</option>
-          <option value="/station/vic">Victoria</option>
-          <option value="/station/chx">Charing Cross</option>
-          <option value="/station/pad">Paddington</option>
-          <option value="/station/spx">St Pancras</option>
-          <option value="/station/eus">Euston</option>
-          <option value="/station/myb">Marylebone</option>
-          <option value="/station/wat">Waterloo</option>
+          <option value="/">🏡 Home</option>
+
+          <option value="/station/chx">🚂 Charing Cross</option>
+          <option value="/station/eus">🚂 Euston</option>
+          <option value="/station/fst">🚂 Fenchurch Street</option>
+          <option value="/station/kgx">🚂 Kings Cross</option>
+          <option value="/station/lst">🚂 Liverpool Street</option>
+          <option value="/station/lbg">🚂 London Bridge</option>
+          <option value="/station/myb">🚂 Marylebone</option>
+          <option value="/station/pad">🚂 Paddington</option>
+          <option value="/station/spx">🚂 St Pancras</option>
+          <option value="/station/vic">🚂 Victoria</option>
+          <option value="/station/wat">🚂 Waterloo</option>
+
+
         </select>
 
       </nav>
+
+
     )
   }
 }
