@@ -3,7 +3,10 @@
   src: url('BPdotsBold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
 
+.homepage {
+  text-align: center;
 }
 
 $background-color: black;
@@ -13,6 +16,10 @@ $color2: white;
 body {
   background-color: $background-color;
   height: 100%;
+}
+
+img {
+  width: 400px;
 }
 
 .homepic {

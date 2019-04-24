@@ -4,8 +4,8 @@ import 'bulma'
 
 class Station extends React.Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
     console.log(this.props)
     this.state = {

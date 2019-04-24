@@ -1,22 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Link } from 'react-router-dom'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
-
 import 'bulma'
-
 import './style.scss'
 import Station from './components/Station'
 import Home from './components/Home'
+import Navbar from './components/Navbar'
+
+
+
 
 
 
 class App extends React.Component {
 
-handleChange(e) {
-    this.state.data(() => this.props.history.push())
-}
+
+
 
   render() {
     return (
@@ -24,20 +24,7 @@ handleChange(e) {
         <main>
           <section>
             <div className="container">
-              <nav>
-
-                <select onChange={this.handleChange}>
-                  <option value="/">Home</option>
-                  <option value="/station/kgx">Kings Cross</option>
-                  <option value="/station/vic">Victoria</option>
-                  <option value="/station/chx">Charing Cross</option>
-                  <option value="/station/pad">Paddington</option>
-                  <option value="/station/spx">St Pancras</option>
-                  <option value="/station/eus">Euston</option>
-                  <option value="/station/myb">Marylebone</option>
-                  <option value="/station/wat">Waterloo</option>
-                </select>
-              </nav>
+              <Navbar />
 
               <Switch>
                 <Route path="/station/:code" component={Station} />
