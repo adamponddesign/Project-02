@@ -37,18 +37,3 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
-
-
-
-// <div key={train._id} className="column is-one-quarter-desktop is-one-third-tablet">
-// </div>
-// )}
-
-/*
-
-{this.state.trains.map(train =>
-  <div key={train._id} className="column is-one-quarter-desktop is-one-third-tablet">
-  </div>
-)}
-
-*/
