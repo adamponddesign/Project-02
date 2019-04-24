@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'bpdotsbold';
+  src: url('BPdotsBold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 $background-color: black;
 $color1: yellow;
 $color2: white;
@@ -27,9 +35,13 @@ nav {
 
 .headings {
   color: $color2;
-  font-family: 'bpdotsbold';
 }
 
 .boardtext {
+  color: $color1;
+  font-family: 'bpdotsbold';
+}
+
+.homesub {
   color: $color1;
 }

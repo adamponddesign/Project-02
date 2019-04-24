@@ -14,7 +14,9 @@ import Home from './components/Home'
 
 class App extends React.Component {
 
-
+handleChange(e) {
+    this.state.data(() => this.props.history.push())
+}
 
   render() {
     return (
@@ -23,15 +25,18 @@ class App extends React.Component {
           <section>
             <div className="container">
               <nav>
-                <Link to="/">Home</Link>
-                <Link to="/station/kgx">Kings Cross</Link>
-                <Link to="/station/vic">Victoria</Link>
-                <Link to="/station/chx">Charing Cross</Link>
-                <Link to="/station/pad">Paddington</Link>
-                <Link to="/station/spx">St Pancras</Link>
-                <Link to="/station/eus">Euston</Link>
-                <Link to="/station/myb">Marylebone</Link>
-                <Link to="/station/wat">Waterloo</Link>
+
+                <select onChange={this.handleChange}>
+                  <option value="/">Home</option>
+                  <option value="/station/kgx">Kings Cross</option>
+                  <option value="/station/vic">Victoria</option>
+                  <option value="/station/chx">Charing Cross</option>
+                  <option value="/station/pad">Paddington</option>
+                  <option value="/station/spx">St Pancras</option>
+                  <option value="/station/eus">Euston</option>
+                  <option value="/station/myb">Marylebone</option>
+                  <option value="/station/wat">Waterloo</option>
+                </select>
               </nav>
 
               <Switch>
