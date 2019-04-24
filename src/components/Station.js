@@ -68,42 +68,50 @@ class Station extends React.Component {
     if (!this.state) return null
 
     return (
-      <section className="section">
+      <section id="station-section" className="section">
         <div className="container">
-          <h1 className="headings title is-1 has-text-centered">{this.state.station}</h1>
+
+          <div id="headerCont" className="headings columns title is-1 has-text-centered is-vcentered is-centered">
+            <img id="headerlogo" src="https://art4clip.com/images/subway-clipart-mrt-9.png" alt="train logo image" />
+
+            <h1 className="homePageHeader">{this.state.station}</h1>
+
+            <img id="headerlogo" src="https://art4clip.com/images/subway-clipart-mrt-9.png" alt="train logo image" />
+          </div>
+
           <div className="columns">   {/* overall columns tag*/ }
-            <div className="column">  {/* opening column 1 tag*/ }
-              <h1 className="headings subtitle is-3 has-text-centered">Departures</h1>
-              <div className="columns is-half">
-                <p className="headings column">Destination</p>
-                <p className="headings column has-text-centered">Platform</p>
-                <p className="headings column has-text-centered">Expected Departure</p>
-              </div>
-              <div>
-                {this.state.departures.map((train, index) =>
-                  <div className="columns is-half" key={index}>
-                    <div className="boardtext column">{train.destination_name}
-                    </div>
-                    <div className="boardtext column has-text-centered">{train.platform}</div>
-                    <div className="boardtext column has-text-centered">{train.expected_departure_time}</div>
-                  </div>
-                )}
-              </div>
-            </div>    {/* closing column 1 tag*/ }
-            <div className="column">  {/* opening column 2 tag*/ }
+            <div id="station-column-1" className="column">  {/* opening column 1 tag*/ }
               <h1 className="headings subtitle is-3 has-text-centered">Arrivals</h1>
               <div className="columns is-half">
-                <p className="headings column">Arriving From</p>
+                <p className="headings column is-three-fifths">Arriving From</p>
                 <p className="headings column has-text-centered">Platform</p>
                 <p className="headings column has-text-centered">Expected Arrival</p>
               </div>
               <div>
                 {this.state.arrivals.map((train, index) =>
                   <div className="columns is-half" key={index}>
-                    <div className="boardtext column">{train.origin_name}
+                    <div className="boardtext column is-three-fifths">{train.origin_name}
                     </div>
                     <div className="boardtext column has-text-centered">{train.platform}</div>
                     <div className="boardtext column has-text-centered">{train.expected_arrival_time}</div>
+                  </div>
+                )}
+              </div>
+            </div>    {/* closing column 1 tag*/ }
+            <div id="station-column-2" className="column">  {/* opening column 2 tag*/ }
+              <h1 className="headings subtitle is-3 has-text-centered">Departures</h1>
+              <div className="columns is-half">
+                <p className="headings column is-three-fifths">Destination</p>
+                <p className="headings column has-text-centered">Platform</p>
+                <p className="headings column has-text-centered">Expected Departure</p>
+              </div>
+              <div>
+                {this.state.departures.map((train, index) =>
+                  <div className="columns is-half" key={index}>
+                    <div className="boardtext column is-three-fifths">{train.destination_name}
+                    </div>
+                    <div className="boardtext column has-text-centered">{train.platform}</div>
+                    <div className="boardtext column has-text-centered">{train.expected_departure_time}</div>
                   </div>
                 )}
               </div>

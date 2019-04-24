@@ -1,3 +1,7 @@
+$background-color: black;
+$color1: yellow;
+$color2: white;
+
 @font-face {
   font-family: 'bpdotsbold';
   src: url('BPdotsBold-webfont.woff') format('woff');
@@ -5,20 +9,20 @@
   font-style: normal;
 }
 
-.homepage {
-  text-align: center;
+#station-section {
+  padding-top: 10px;
 }
-
-$background-color: black;
-$color1: yellow;
-$color2: white;
 
 body {
   background-color: $background-color;
   height: 100%;
 }
 
-img {
+.homepage {
+  text-align: center;
+}
+
+.homepageimage {
   width: 400px;
 }
 
@@ -40,15 +44,43 @@ nav {
   padding-top: 20px;
 }
 
+
+
 .headings {
+  font-family: 'Questrial', sans-serif;
   color: $color2;
 }
 
 .boardtext {
   color: $color1;
   font-family: 'bpdotsbold';
+  font-size: 17px;
 }
 
 .homesub {
+  font-family: 'Questrial', sans-serif;
   color: $color1;
+}
+
+#headerlogo {
+  width: 100px;
+}
+.homePageHeader {
+  display: inline-block;
+}
+
+#home-section {
+  height: 100vh;
+}
+
+#headerCont {
+}
+
+#station-column-1, #station-column-2 {
+  border: 1px solid white;
+  margin: 2px;
+}
+
+.column {
+  padding: 0px 20px 0 20px;
 }
