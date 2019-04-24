@@ -73,7 +73,7 @@ class Station extends React.Component {
           <h1 className="headings title is-1 has-text-centered">{this.state.station}</h1>
           <div className="columns">   {/* overall columns tag*/ }
             <div className="column">  {/* opening column 1 tag*/ }
-              <h1 className="headings title is-1 has-text-centered">Departures</h1>
+              <h1 className="headings subtitle is-3 has-text-centered">Departures</h1>
               <div className="columns is-half">
                 <p className="headings column">Destination</p>
                 <p className="headings column has-text-centered">Platform</p>
@@ -91,7 +91,7 @@ class Station extends React.Component {
               </div>
             </div>    {/* closing column 1 tag*/ }
             <div className="column">  {/* opening column 2 tag*/ }
-              <h1 className="headings title is-1 has-text-centered">Arrivals</h1>
+              <h1 className="headings subtitle is-3 has-text-centered">Arrivals</h1>
               <div className="columns is-half">
                 <p className="headings column">Arriving From</p>
                 <p className="headings column has-text-centered">Platform</p>
