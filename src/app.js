@@ -17,20 +17,16 @@ class App extends React.Component {
           <section className="section">
             <div className="container">
               <Navbar />
-
               <Switch>
                 <Route path="/station/:code" component={Station} />
                 <Route path="/" component={Home} />
-
               </Switch>
-
             </div>
           </section>
         </main>
       </Router>
     )
   }
-
 }
 
 ReactDOM.render(

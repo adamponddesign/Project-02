@@ -13,7 +13,6 @@ class Station extends React.Component {
       arrivals: [],
       station: ''
     }
-
   }
 
   getDeparturesData() {
@@ -61,14 +60,11 @@ class Station extends React.Component {
 
   render() {
     if (!this.state) return null
-
     return (
       <div>
         <div id="headerCont" className="headings columns title is-1 has-text-centered is-vcentered is-centered">
           <img id="headerlogo" src="https://art4clip.com/images/subway-clipart-mrt-9.png" alt="train logo image" />
-
           <h1 className="homePageHeader">{this.state.station}</h1>
-
           <img id="headerlogo" src="https://art4clip.com/images/subway-clipart-mrt-9.png" alt="train logo image" />
         </div>
 
