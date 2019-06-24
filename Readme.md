@@ -63,7 +63,7 @@ Here is an example from our code of mapping over the departures data in order to
 ```
 
 ### Challenges
-The short timeframe made it tricky to confidently set goals that were both challenging and achievable.
+The short timeframe made it tricky to confidently set goals that were both challenging and achievable.  
 The API documentation was at first tricky to understand and interpret.
 
 
