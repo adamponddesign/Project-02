@@ -47,7 +47,7 @@ We then created two separate functions
 * getDeparturesData
 * getArrivalsData
 
-Both contained an `axios` GET request which incorporated our key and chosen parameters, then set the data received back on to `state`.
+Both contained an `axios` GET request which incorporated our key and chosen parameters, then set the data received back from the API on to `state`.
 
 Here is an example from our code of mapping over the departures data in order to display the information for each individual train.
 
@@ -63,8 +63,8 @@ Here is an example from our code of mapping over the departures data in order to
 ```
 
 ### Challenges
-
-The API documentation was at first, challenging to understand and interpret.
+The short timeframe made it tricky to confidently set goals that were both challenging and attainable.
+The API documentation was at first tricky to understand and interpret.
 
 
 ### Wins
