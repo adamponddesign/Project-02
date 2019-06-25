@@ -32,7 +32,7 @@ The application allows users to view live arrival and departure times at several
 After a discussion we decided to make an app which displayed some transport information.  
 With the 2 day timeframe in mind, we next researched which APIs could provide us with a key quickly.
 
-Having received our API key from the **Transport API** we used the documentation and the **REST** client **insomnia** to experiment and decipher how to attain the information we required.
+Having received our API key from the **Transport API** we used the documentation and the **REST** client **Insomnia** to experiment and decipher how to attain the information we required.
 
 In our code we initialised state with empty arrays for departures and arrivals and an empty string for station.
 
@@ -47,7 +47,7 @@ We then created two separate functions
 * getDeparturesData
 * getArrivalsData
 
-Both contained an **axios** GET request which incorporated our key and chosen parameters, then set the data received back from the API on to **stat**.
+Both contained an **axios** GET request which incorporated our key and chosen parameters, then set the data received back from the API on to **state**.
 
 Here is an example from our code of mapping over the departures data in order to display the information for each individual train.
 
