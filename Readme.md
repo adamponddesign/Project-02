@@ -75,3 +75,6 @@ This project was a great introduction to React and I enjoyed learning how to inc
 Having initially only aimed to display departures information, it was big win to discover that the same API could also provide arrivals data.
 
 We also needed to install **file-loader** and make some additions to our **webpack.config** file in order to display our imported font.
+
+### Next Steps 
+* Improve the stying of the site by adding a navigation bar
